@@ -1,0 +1,117 @@
+#intro { height: 100%; width: 100%; position: fixed; overflow: hidden; top: 0; }
+
+#intro .video { position: relative; }
+
+#intro .video:after { content: ""; display: block; position: absolute; left: 0; right: 0; bottom: 0; top: 0; background-color: rgba(0, 0, 0, 0.5); }
+
+#intro .video:after video { width: 100%; height: 100%; }
+
+#intro .typing { position: absolute; width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; color: #fff; font-size: 64px; font-weight: 100; z-index: 2; text-transform: uppercase; text-shadow: 1px 1px 0px #333,2px 2px 0px #333,3px 3px 0px #333,4px 4px 0px #333,5px 5px 0px #333,6px 6px 0px #333,7px 7px 0px #333,8px 8px 0px #333,9px 9px 0px #333,10px 10px 0px #333,11px 11px 0px #333,12px 12px 0px #333,13px 13px 0px #333,14px 14px 0px #333,15px 15px 0px #333,16px 16px 0px #333,17px 17px 0px #333,18px 18px 0px #333,19px 19px 0px #333,20px 20px 0px #333,21px 21px 0px #333,22px 22px 0px #333,23px 23px 0px #333,24px 24px 0px #333,25px 25px 0px #333,26px 26px 0px #333,27px 27px 0px #333,28px 28px 0px #333,29px 29px 0px #333,30px 30px 0px #333,31px 31px 0px #333,32px 32px 0px #333,33px 33px 0px #333,34px 34px 0px #333,35px 35px 0px #333,36px 36px 0px #333,37px 37px 0px #333,38px 38px 0px #333,39px 39px 0px #333,40px 40px 0px #333,41px 41px 0px #333,42px 42px 0px #333,43px 43px 0px #333,44px 44px 0px #333,45px 45px 0px #333,46px 46px 0px #333,47px 47px 0px #333,48px 48px 0px #333,49px 49px 0px #333,50px 50px 0px #333,51px 51px 0px #333,52px 52px 0px #333,53px 53px 0px #333,54px 54px 0px #333,55px 55px 0px #333,56px 56px 0px #333,57px 57px 0px #333,58px 58px 0px #333,59px 59px 0px #333,60px 60px 0px #333,61px 61px 0px #333,62px 62px 0px #333,63px 63px 0px #333,64px 64px 0px #333,65px 65px 0px #333,66px 66px 0px #333,67px 67px 0px #333,68px 68px 0px #333,69px 69px 0px #333,70px 70px 0px #333,71px 71px 0px #333,72px 72px 0px #333,73px 73px 0px #333,74px 74px 0px #333,75px 75px 0px #333,76px 76px 0px #333,77px 77px 0px #333,78px 78px 0px #333,79px 79px 0px #333,80px 80px 0px #333,81px 81px 0px #333,82px 82px 0px #333,83px 83px 0px #333,84px 84px 0px #333,85px 85px 0px #333,86px 86px 0px #333,87px 87px 0px #333,88px 88px 0px #333,89px 89px 0px #333,90px 90px 0px #333,91px 91px 0px #333,92px 92px 0px #333,93px 93px 0px #333,94px 94px 0px #333,95px 95px 0px #333,96px 96px 0px #333,97px 97px 0px #333,98px 98px 0px #333,99px 99px 0px #333,100px 100px 0px #333,101px 101px 0px #333,102px 102px 0px #333,103px 103px 0px #333,104px 104px 0px #333,105px 105px 0px #333,106px 106px 0px #333,107px 107px 0px #333,108px 108px 0px #333,109px 109px 0px #333,110px 110px 0px #333,111px 111px 0px #333,112px 112px 0px #333,113px 113px 0px #333,114px 114px 0px #333,115px 115px 0px #333,116px 116px 0px #333,117px 117px 0px #333,118px 118px 0px #333,119px 119px 0px #333,120px 120px 0px #333,121px 121px 0px #333,122px 122px 0px #333,123px 123px 0px #333,124px 124px 0px #333,125px 125px 0px #333,126px 126px 0px #333,127px 127px 0px #333,128px 128px 0px #333,129px 129px 0px #333,130px 130px 0px #333,131px 131px 0px #333,132px 132px 0px #333,133px 133px 0px #333,134px 134px 0px #333,135px 135px 0px #333,136px 136px 0px #333,137px 137px 0px #333,138px 138px 0px #333,139px 139px 0px #333,140px 140px 0px #333,141px 141px 0px #333,142px 142px 0px #333,143px 143px 0px #333,144px 144px 0px #333,145px 145px 0px #333,146px 146px 0px #333,147px 147px 0px #333,148px 148px 0px #333,149px 149px 0px #333,150px 150px 0px #333,151px 151px 0px #333,152px 152px 0px #333,153px 153px 0px #333,154px 154px 0px #333,155px 155px 0px #333,156px 156px 0px #333,157px 157px 0px #333,158px 158px 0px #333,159px 159px 0px #333,160px 160px 0px #333,161px 161px 0px #333,162px 162px 0px #333,163px 163px 0px #333,164px 164px 0px #333,165px 165px 0px #333,166px 166px 0px #333,167px 167px 0px #333,168px 168px 0px #333,169px 169px 0px #333,170px 170px 0px #333,171px 171px 0px #333,172px 172px 0px #333,173px 173px 0px #333,174px 174px 0px #333,175px 175px 0px #333,176px 176px 0px #333,177px 177px 0px #333,178px 178px 0px #333,179px 179px 0px #333,180px 180px 0px #333,181px 181px 0px #333,182px 182px 0px #333,183px 183px 0px #333,184px 184px 0px #333,185px 185px 0px #333,186px 186px 0px #333,187px 187px 0px #333,188px 188px 0px #333,189px 189px 0px #333,190px 190px 0px #333,191px 191px 0px #333,192px 192px 0px #333,193px 193px 0px #333,194px 194px 0px #333,195px 195px 0px #333,196px 196px 0px #333,197px 197px 0px #333,198px 198px 0px #333,199px 199px 0px #333,200px 200px 0px #333,201px 201px 0px #333,202px 202px 0px #333,203px 203px 0px #333,204px 204px 0px #333,205px 205px 0px #333,206px 206px 0px #333,207px 207px 0px #333,208px 208px 0px #333,209px 209px 0px #333,210px 210px 0px #333,211px 211px 0px #333,212px 212px 0px #333,213px 213px 0px #333,214px 214px 0px #333,215px 215px 0px #333,216px 216px 0px #333,217px 217px 0px #333,218px 218px 0px #333,219px 219px 0px #333,220px 220px 0px #333,221px 221px 0px #333,222px 222px 0px #333,223px 223px 0px #333,224px 224px 0px #333,225px 225px 0px #333,226px 226px 0px #333,227px 227px 0px #333,228px 228px 0px #333,229px 229px 0px #333,230px 230px 0px #333,231px 231px 0px #333,232px 232px 0px #333,233px 233px 0px #333,234px 234px 0px #333,235px 235px 0px #333,236px 236px 0px #333,237px 237px 0px #333,238px 238px 0px #333,239px 239px 0px #333,240px 240px 0px #333,241px 241px 0px #333,242px 242px 0px #333,243px 243px 0px #333,244px 244px 0px #333,245px 245px 0px #333,246px 246px 0px #333,247px 247px 0px #333,248px 248px 0px #333,249px 249px 0px #333,250px 250px 0px #333,251px 251px 0px #333,252px 252px 0px #333,253px 253px 0px #333,254px 254px 0px #333,255px 255px 0px #333,256px 256px 0px #333,257px 257px 0px #333,258px 258px 0px #333,259px 259px 0px #333,260px 260px 0px #333,261px 261px 0px #333,262px 262px 0px #333,263px 263px 0px #333,264px 264px 0px #333,265px 265px 0px #333,266px 266px 0px #333,267px 267px 0px #333,268px 268px 0px #333,269px 269px 0px #333,270px 270px 0px #333,271px 271px 0px #333,272px 272px 0px #333,273px 273px 0px #333,274px 274px 0px #333,275px 275px 0px #333,276px 276px 0px #333,277px 277px 0px #333,278px 278px 0px #333,279px 279px 0px #333,280px 280px 0px #333,281px 281px 0px #333,282px 282px 0px #333,283px 283px 0px #333,284px 284px 0px #333,285px 285px 0px #333,286px 286px 0px #333,287px 287px 0px #333,288px 288px 0px #333,289px 289px 0px #333,290px 290px 0px #333,291px 291px 0px #333,292px 292px 0px #333,293px 293px 0px #333,294px 294px 0px #333,295px 295px 0px #333,296px 296px 0px #333,297px 297px 0px #333,298px 298px 0px #333,299px 299px 0px #333,300px 300px 0px #333,301px 301px 0px #333,302px 302px 0px #333,303px 303px 0px #333,304px 304px 0px #333,305px 305px 0px #333,306px 306px 0px #333,307px 307px 0px #333,308px 308px 0px #333,309px 309px 0px #333,310px 310px 0px #333,311px 311px 0px #333,312px 312px 0px #333,313px 313px 0px #333,314px 314px 0px #333,315px 315px 0px #333,316px 316px 0px #333,317px 317px 0px #333,318px 318px 0px #333,319px 319px 0px #333,320px 320px 0px #333,321px 321px 0px #333,322px 322px 0px #333,323px 323px 0px #333,324px 324px 0px #333,325px 325px 0px #333,326px 326px 0px #333,327px 327px 0px #333,328px 328px 0px #333,329px 329px 0px #333,330px 330px 0px #333,331px 331px 0px #333,332px 332px 0px #333,333px 333px 0px #333,334px 334px 0px #333,335px 335px 0px #333,336px 336px 0px #333,337px 337px 0px #333,338px 338px 0px #333,339px 339px 0px #333,340px 340px 0px #333,341px 341px 0px #333,342px 342px 0px #333,343px 343px 0px #333,344px 344px 0px #333,345px 345px 0px #333,346px 346px 0px #333,347px 347px 0px #333,348px 348px 0px #333,349px 349px 0px #333,350px 350px 0px #333,351px 351px 0px #333,352px 352px 0px #333,353px 353px 0px #333,354px 354px 0px #333,355px 355px 0px #333,356px 356px 0px #333,357px 357px 0px #333,358px 358px 0px #333,359px 359px 0px #333,360px 360px 0px #333,361px 361px 0px #333,362px 362px 0px #333,363px 363px 0px #333,364px 364px 0px #333,365px 365px 0px #333,366px 366px 0px #333,367px 367px 0px #333,368px 368px 0px #333,369px 369px 0px #333,370px 370px 0px #333,371px 371px 0px #333,372px 372px 0px #333,373px 373px 0px #333,374px 374px 0px #333,375px 375px 0px #333,376px 376px 0px #333,377px 377px 0px #333,378px 378px 0px #333,379px 379px 0px #333,380px 380px 0px #333,381px 381px 0px #333,382px 382px 0px #333,383px 383px 0px #333,384px 384px 0px #333,385px 385px 0px #333,386px 386px 0px #333,387px 387px 0px #333,388px 388px 0px #333,389px 389px 0px #333,390px 390px 0px #333,391px 391px 0px #333,392px 392px 0px #333,393px 393px 0px #333,394px 394px 0px #333,395px 395px 0px #333,396px 396px 0px #333,397px 397px 0px #333,398px 398px 0px #333,399px 399px 0px #333,400px 400px 0px #333,401px 401px 0px #333,402px 402px 0px #333,403px 403px 0px #333,404px 404px 0px #333,405px 405px 0px #333,406px 406px 0px #333,407px 407px 0px #333,408px 408px 0px #333,409px 409px 0px #333,410px 410px 0px #333,411px 411px 0px #333,412px 412px 0px #333,413px 413px 0px #333,414px 414px 0px #333,415px 415px 0px #333,416px 416px 0px #333,417px 417px 0px #333,418px 418px 0px #333,419px 419px 0px #333,420px 420px 0px #333,421px 421px 0px #333,422px 422px 0px #333,423px 423px 0px #333,424px 424px 0px #333,425px 425px 0px #333,426px 426px 0px #333,427px 427px 0px #333,428px 428px 0px #333,429px 429px 0px #333,430px 430px 0px #333,431px 431px 0px #333,432px 432px 0px #333,433px 433px 0px #333,434px 434px 0px #333,435px 435px 0px #333,436px 436px 0px #333,437px 437px 0px #333,438px 438px 0px #333,439px 439px 0px #333,440px 440px 0px #333,441px 441px 0px #333,442px 442px 0px #333,443px 443px 0px #333,444px 444px 0px #333,445px 445px 0px #333,446px 446px 0px #333,447px 447px 0px #333,448px 448px 0px #333,449px 449px 0px #333,450px 450px 0px #333,451px 451px 0px #333,452px 452px 0px #333,453px 453px 0px #333,454px 454px 0px #333,455px 455px 0px #333,456px 456px 0px #333,457px 457px 0px #333,458px 458px 0px #333,459px 459px 0px #333,460px 460px 0px #333,461px 461px 0px #333,462px 462px 0px #333,463px 463px 0px #333,464px 464px 0px #333,465px 465px 0px #333,466px 466px 0px #333,467px 467px 0px #333,468px 468px 0px #333,469px 469px 0px #333,470px 470px 0px #333,471px 471px 0px #333,472px 472px 0px #333,473px 473px 0px #333,474px 474px 0px #333,475px 475px 0px #333,476px 476px 0px #333,477px 477px 0px #333,478px 478px 0px #333,479px 479px 0px #333,480px 480px 0px #333,481px 481px 0px #333,482px 482px 0px #333,483px 483px 0px #333,484px 484px 0px #333,485px 485px 0px #333,486px 486px 0px #333,487px 487px 0px #333,488px 488px 0px #333,489px 489px 0px #333,490px 490px 0px #333,491px 491px 0px #333,492px 492px 0px #333,493px 493px 0px #333,494px 494px 0px #333,495px 495px 0px #333,496px 496px 0px #333,497px 497px 0px #333,498px 498px 0px #333,499px 499px 0px #333,500px 500px 0px #333;; }
+
+#intro .typing strong { font-weight: 700; }
+
+.contentsWrap { position: relative; z-index: 2; background-color: #fff; margin-top: 100vh; }
+
+.contentsWrap .section { min-height: 100vh; }
+
+.contentsWrap .section:nth-child(2n) { background-color: #c9c9c9; width: 100vw; height: 800px; }
+
+.contentsWrap .section h2 { font-size: 128px; font-weight: 700; text-transform: uppercase; -webkit-transform: translate(50px, 20px); transform: translate(50px, 20px); text-shadow: 1px 1px 0px #333,2px 2px 0px #333,3px 3px 0px #333,4px 4px 0px #333,5px 5px 0px #333;; }
+
+.contentsWrap .section .contents { min-height: 500px; border-radius: 80px 80px 0 0; padding-left: 100px; }
+
+#profile h2:after { content: ""; position: absolute; display: block; background-color: #000; width: 100%; height: 5px; -webkit-transform-origin: left; transform-origin: left; }
+
+#profile ul { margin: 50px 0; }
+
+#profile ul li { margin: 20px 0; }
+
+#profile ul li dl { display: -webkit-box; display: -ms-flexbox; display: flex; font-size: 48px; }
+
+#profile ul li dl span { margin: 0 5px; }
+
+#profile ul li dl span.char { margin: 0; }
+
+#profile ul li dl dd { font-weight: 700; }
+
+#skill h2:after { content: ""; position: absolute; display: block; background-color: #000; width: 100%; height: 5px; -webkit-transform-origin: left; transform-origin: left; }
+
+#skill ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 100px 0; }
+
+#skill ul li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 24px; border-radius: 100%; width: 200px; height: 200px; margin: 10px; text-align: center; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#skill ul li dl { position: absolute; width: 100%; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+#skill ul li dl dt { font-size: 32px; }
+
+#skill ul li dl dd { font-size: 42px; }
+
+#skill ul li dl dd .num { font-weight: 700; }
+
+#skill ul li .round { position: relative; left: 0; top: 0; z-index: 2; width: 100%; height: 100%; }
+
+#skill ul li .round svg { width: 200px; height: 200px; position: relative; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+
+#skill ul li .round svg circle { fill: transparent; stroke-width: 10px; stroke: #111; stroke-linecap: round; stroke-dasharray: 1000; stroke-dashoffset: -1000; }
+
+#skill .skillData { width: 800px; margin: 10px auto; text-align: center; line-height: 1.5; }
+
+#skill .skillData h3 { font-size: 32px; margin-bottom: 20px; }
+
+#skill .skillData p { font-size: 24px; font-weight: 500; }
+
+#skill .skillData span { margin: 5px; }
+
+#skill .skillData span.date { color: #c2c2c2; }
+
+#portfolio { position: relative; }
+
+#portfolio h2:after { content: ""; position: absolute; display: block; background-color: #000; width: 100%; height: 5px; -webkit-transform-origin: left; transform-origin: left; }
+
+#portfolio .pfList { background-color: #c9c9c9; border-radius: 25px; width: 1400px; margin: 50px auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 10px; }
+
+#portfolio .pfList .item { width: calc(25% - 15px); margin: 5px; background-color: #fff; border-radius: 25px; -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#portfolio .pfList .item .imgBox { border-radius: 25px; background-color: #333; overflow: hidden; width: 100%; }
+
+#portfolio .pfList .item .imgBox img { width: 100%; }
+
+#portfolio .pfList .item .txtBox { padding: 10px; }
+
+#portfolio .pfList .item .txtBox .title { font-size: 28px; margin-top: 10px; font-weight: 700; }
+
+#portfolio .pfList .item .txtBox p { line-height: 1.5; }
+
+#portfolio .pfList .item .txtBox a { display: inline-block; padding: 15px 0; line-height: 1.5; font-size: 18px; word-break: break-all; }
+
+#portfolio .pfList .item .txtBox .desc { font-size: 18px; margin-top: 10px; }
+
+#portfolio .pfList .item .txtBox .tag { margin-top: 20px; font-weight: 700; color: #00f; }
+
+#career h2:after { content: ""; position: absolute; display: block; background-color: #000; width: 100%; height: 5px; -webkit-transform-origin: left; transform-origin: left; }
+
+#contact .formWrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+#contact .formWrap form { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; padding-left: 100px; margin-right: 100px; }
+
+#contact .formWrap form .inputWrap { margin-bottom: 15px; }
+
+#contact .formWrap form input, #contact .formWrap form textarea { width: 100%; height: 50px; background-color: #111; color: #fff; padding: 0 15px; border-radius: 5px; border: none; outline: none; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#contact .formWrap form textarea { height: 300px; padding-top: 15px; resize: none; }
+
+#contact .formWrap form .btns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+#contact .formWrap form .btns button { height: 50px; width: 120px; background-color: #00aeff; color: #fff; border-radius: 5px; }
+
+#popup { position: fixed; z-index: 9999; left: 100px; top: 100px; border: 2px solid #333; background-color: #fff; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+
+#popup .contents { padding: 50px; }
+
+#popup .contents .alertTxt { margin: 20px; font-weight: 500; line-height: 1.8; color: #111; text-align: center; }
+
+#popup .btns { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#popup .btns button { width: 50%; padding: 20px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #c9c9c9; }
+
+#popup .btns button:hover { background-color: #333; color: #fff; }

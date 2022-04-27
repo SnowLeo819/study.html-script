@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div><input type="text" id="age" placeholder="생년월일을 입력하세요. ex)19910101" style="width: 300px" /></div>
+      <div><button id="btnConfirm">확인</button></div>
+    </div>
+  </body>
+  <script>
+    const age = document.querySelector("#age");
+    const btnConfirm = document.querySelector("#btnConfirm");
+
+    const now = new Date();
+    console.log(now);
+    const year = now.getFullYear();
+    console.log(year);
+
+    btnConfirm.addEventListener("click", () => {
+      const txtAge = age.value;
+      const tempYear = Number(txtAge.slice(0, 4));
+      console.log(tempYear);
+      const gap = year - tempYear;
+      if (gap <= 19) {
+        alert("미자는 집으로;;");
+      }
+    });
+
+    // btnConfirm.addEventListener("click", () => {
+    //   // console.log("click");
+    //   const testAge = parseInt(age.value, 10);
+    //   console.log(testAge);
+    //   if (testAge <= 19) {
+    //     alert("미자는 집으로;;");
+    //   }
+    // });
+
+    // const mst = "Hello World";
+    // console.log(msg.slice(0, 5));
+  </script>
+</html>

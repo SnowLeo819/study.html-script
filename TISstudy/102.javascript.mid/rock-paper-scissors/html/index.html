@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rock-paper-scissors</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>
+        <span class="main">rock-paper-scissors</span>
+        <span class="sub">play test</span>
+      </h1>
+      <div id="com">
+        <ul>
+          <li><img src="../images/rock.svg" alt="rock" /></li>
+          <li><img src="../images/paper.svg" alt="paper" /></li>
+          <li><img src="../images/scissors.svg" alt="scissors" /></li>
+        </ul>
+      </div>
+      <div id="player">
+        <ul>
+          <li><img src="../images/rock.svg" alt="rock" /></li>
+          <li><img src="../images/paper.svg" alt="paper" /></li>
+          <li><img src="../images/scissors.svg" alt="scissors" /></li>
+        </ul>
+      </div>
+      <div id="result">
+        <!-- <ul>
+          <li class="win">W</li>
+          <li class="lose">L</li>
+          <li class="draw">D</li>
+        </ul> -->
+      </div>
+    </div>
+    <div id="cover">
+      <h2>Continue..?</h2>
+      <button id="btnRestart">restart game</button>
+    </div>
+  </body>
+  <script>
+    const comList = document.querySelectorAll("#com ul li"); // NodeList => 유사 배열
+    const players = document.querySelectorAll("#player ul li"); // NodeList => 유사 배열
+    const playerList = document.querySelector("#player ul"); // NodeList => 유사 배열
+    const result = document.querySelector("#result");
+    const resultList = document.createElement("ul");
+    const cover = document.querySelector("#cover");
+    const btnRestart = document.querySelector("#btnRestart");
+    const match = document.qu;
+    result.appendChild(resultList);
+
+    let sel = 0;
+    let count = 0;
+    const comChoice = () => {
+      comList.forEach((element, index) => {
+        element.style.display = "none";
+      });
+      sel = Math.floor(Math.random() * 3); // 0~2.99999...
+      comList[sel].style.display = "block"; // 0:묵, 1:빠, 2:찌
+    };
+    // -------------------------------------------------------  com 의 묵찌빠 선택
+
+    comChoice();
+    let gameIdx;
+    let clearIdx = setInterval(comChoice, 50); // 반복설정.
+    players.forEach((element, index) => {
+      element.addEventListener("click", () => {
+        clearInterval(clearIdx); //--------------------- 반복 중지
+        element.classList.add("on"); // ---------------- li css 추가
+        playerList.classList.add("prevent"); //----- 1초동안 선택 금지 css
+        // console.log(sel, "===", index); //------- 내가 선택한 것과 비교(승패확인)
+        if (sel === index) {
+          // console.log("비김");
+          resultList.innerHTML += `<li class="draw">D</li>`;
+        } else if (
+          (sel === 0 && index === 1) ||
+          (sel === 1 && index === 2) ||
+          (sel === 2 && index === 0)
+        ) {
+          // console.log("이김");
+          resultList.innerHTML += `<li class="win">W</li>`;
+        } else {
+          // console.log("짐");
+          resultList.innerHTML += `<li class="lose">L</li>`;
+        } //--------------------------------------------------- 승패 표시 끝
+        // console.log(count);
+        gameIdx = setTimeout(() => {
+          clearIdx = setInterval(comChoice, 50); //----------- 반복 시작
+          element.classList.remove("on"); //------------------- 승패 정보 해제
+          playerList.classList.remove("prevent"); //----------- 선택 막기 해제
+        }, 500);
+        count++; //--------------------------------------- 반복수 마다 count + 1
+        // console.log(count);
+        if (count >= 3) {
+          //------------------------------------------------ count 3 이상이면 적용
+          clearTimeout(gameIdx); //------------------------- 반복 종료
+          cover.style.display = "flex"; //------------------ cover 화면 보이기
+
+          btnRestart.addEventListener("click", () => {
+            //---------------------------------------- continue 버튼 클릭하면 아래 명령 실행
+            count = 0; //----------------------------------- count 초기화
+            cover.style.display = "none"; //---------------- cover 화면 안보이게
+            resultList.innerHTML = ""; //------------------- 이전 결과 삭제
+            gameIdx = setTimeout(() => {
+              clearInterval(clearIdx); //---------------------  Interval 반복 정지
+              clearIdx = setInterval(comChoice, 50); //----------- 반복 시작
+              element.classList.remove("on"); //------------------- 승패 정보 해제
+              playerList.classList.remove("prevent"); //----------- 선택 막기 해제
+            }, 500);
+          });
+          // console.log(count);
+        }
+      });
+    });
+  </script>
+  <!-- <script>
+    const num01 = 10; // Number
+    const num02 = "10"; // String
+    console.log(num01 == num02); //Boolean :true/false
+    // == :같다  != : 다르다..  !은 부정   ===: 값/타입 모두 같다.
+
+    const aaa = () => {
+      console.log("자바스크립트의 모든 변수는 리턴값을 갖는다.");
+      // return 10;
+    };
+    console.log(aaa());
+  </script> -->
+</html>

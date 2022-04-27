@@ -1,0 +1,232 @@
+@import "vars";
+@import "mixins";
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+#header {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  padding: 0 50px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  transition: 0.3s ease;
+  &:hover {
+    height: 380px;
+    background-color: $white-color;
+    .logo {
+      .white {
+        display: none;
+      }
+      .black {
+        display: block;
+      }
+    }
+    .gnb {
+      color: $text-color;
+      border-bottom: 1px solid $border-color;
+      .mainNav {
+        li {
+          .subNav {
+            display: flex;
+          }
+        }
+      }
+    }
+    .etc {
+      .laguageTab {
+        button {
+          a {
+            color: $text-color;
+          }
+        }
+      }
+      .openMenu {
+        .berger {
+          background-color: $text-color;
+        }
+      }
+    }
+  } // header hover end
+  // border: 1px solid red;
+  .logo {
+    z-index: 2;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    // border: 1px solid red;
+    .black {
+      display: none;
+    }
+  }
+  .gnb {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    left: 0;
+    color: $white-color;
+    .mainNav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > li {
+        position: relative;
+        &::after {
+          @include pseudo();
+          background-color: $main-color;
+          width: 100%;
+          transform: scale(0);
+          height: 2px;
+          transition: 0.3s ease;
+        }
+        &:hover {
+          > a {
+            color: $main-color;
+          }
+          &:after {
+            transform: scale(1);
+          }
+        }
+        > a {
+          display: flex;
+          height: 100px;
+          position: relative;
+          padding: 0 50px;
+          font-size: $medium-size;
+          font-weight: 600;
+          justify-content: center;
+          align-items: center;
+          transition: 0.3s ease;
+        }
+        .subNav {
+          display: none;
+          width: 100%;
+          position: absolute;
+          padding: 20px 0;
+          line-height: 2.5;
+          flex-flow: column;
+          align-items: center;
+          li {
+            font-weight: 500;
+            &:hover {
+              a {
+                color: $main-color;
+              }
+            }
+            a {
+              transition: 0.3s ease;
+            }
+            .strong {
+              color: $main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .etc {
+    z-index: 3;
+    width: 200px;
+    height: 100px;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .laguageTab {
+      button {
+        color: $white-color;
+        font-size: $medium-size;
+      }
+    }
+    .openMenu {
+      .berger {
+        width: 25px;
+        background-color: $white-color;
+        height: 2px;
+        &:nth-child(1) {
+          transform: translateY(-8px);
+        }
+        &:nth-child(3) {
+          transform: translateY(8px);
+        }
+      }
+    }
+  }
+}
+// header end
+#footer {
+  background-color: $text-color;
+  display: flex;
+  padding: 30px 30px;
+  .btmLogo {
+  }
+  .inner {
+    width: 100%;
+    margin-left: 80px;
+    .btmBox01 {
+      display: flex;
+      justify-content: space-between;
+      .btmNav {
+        display: flex;
+        color: $white-color;
+        li {
+          padding: 20px 40px 20px 0;
+          &:nth-child(1) {
+            color: $main-color;
+          }
+        }
+      }
+      .family {
+        width: 440px;
+        height: 50px;
+        border: 1px solid red;
+      }
+    }
+    .btmBox02 {
+      margin-top: 15px;
+      border-top: 1px solid $hover-color;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      color: $hover-color;
+      width: 100%;
+      .left {
+        p {
+          line-height: 1.5;
+          font-size: $normal-size;
+        }
+        .copyright {
+          margin-top: 20px;
+        }
+      }
+      .right {
+        .call {
+          display: flex;
+          dt,
+          dd {
+            font-size: $large-size;
+            padding-left: 10px;
+          }
+          dt {
+            padding-left: 35px;
+          }
+          dd {
+            color: $gray-color;
+          }
+        }
+        .btmLink {
+          margin-top: 30px;
+          display: flex;
+          justify-content: flex-end;
+          img {
+            padding-left: 50px;
+          }
+        }
+      }
+    }
+  }
+}

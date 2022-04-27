@@ -1,0 +1,333 @@
+@import "vars";
+@import "mixins";
+
+.titleBox {
+  h2 {
+    margin-bottom: 30px;
+    font-size: $h2;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  p {
+    font-size: $medium-size;
+  }
+}
+
+.btns {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  .btn {
+    transition: 0.3s ease;
+    border: 1px solid $border-color;
+    border-radius: 100px;
+    display: flex;
+    @include flexCenter();
+  }
+  .transition:hover {
+    background-color: $text-color;
+    border-color: $text-color;
+    color: $white-color;
+  }
+  .large {
+    height: 60px;
+    padding: 0 50px;
+  }
+}
+
+#main {
+  #mainVisual {
+    li {
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      &.visual01 {
+        background-image: url(../images/main/bg1.jpg);
+      }
+      &.visual02 {
+        background-image: url(../images/main/bg2.jpg);
+      }
+      &.visual03 {
+        background-image: url(../images/main/bg3.jpg);
+      }
+    }
+    .slogan {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      color: $white-color;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      .main {
+        font-size: $xx-large-size;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+        font-weight: 700;
+      }
+      .sub {
+        margin-top: 2rem;
+        font-size: $large-size;
+      }
+      a {
+        display: inline-flex;
+        margin-top: 5rem;
+        padding: 10px 40px;
+        border: 1px solid $white-color;
+        transition: 0.3s ease;
+        align-items: center;
+        border-radius: 100px;
+        &:hover {
+          color: $white-color;
+          border: none;
+          background-color: $main-color;
+        }
+        span {
+          margin-left: 2rem;
+        }
+      }
+      .pagination {
+        margin-top: 50px;
+        .swiper-pagination-bullet {
+          width: 20px;
+          height: 20px;
+          background: none;
+          border: 2px solid $white-color;
+          opacity: 1;
+          transition: 0.3s ease;
+          border-radius: 100px;
+          &-active {
+            width: 70px;
+            background-color: $white-color;
+          }
+        }
+      }
+    }
+  }
+  // mainVisual end
+  #product {
+    overflow: hidden;
+    position: relative;
+    .titleBox {
+      position: absolute;
+      top: 100px;
+      left: 80px;
+      z-index: 2;
+    }
+    .btns {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      button {
+        background-color: $gray-color;
+        border-radius: 0;
+        border: none;
+        @include flexCenter;
+        @include box(100px);
+        span {
+          font-size: $x-large-size;
+        }
+      }
+    }
+    .list {
+      .swiper-slide {
+        position: relative;
+        .link {
+          position: absolute;
+          right: 35px;
+          bottom: 35px;
+          padding: 5px 20px;
+          border: 1px solid $text-color;
+          transition: 0.3s ease;
+          border-radius: 100px;
+          @include flexCenter();
+          span {
+            margin-left: 10px;
+            color: $main-color;
+          }
+          &:hover {
+            color: $white-color;
+            background-color: $text-color;
+          }
+        }
+      }
+    }
+  }
+  // product end
+  #news {
+    padding: 100px 0;
+    .contents {
+      width: 1440px;
+      margin: auto;
+      .list {
+        display: flex;
+        margin-top: 50px;
+        justify-content: space-between;
+        li {
+          width: 31.33%;
+          // overflow: hidden;
+          // transition: 0.3s ease;
+          // border: 1px solid $border-color;
+          // border-radius: 20px;
+        }
+        a {
+          display: block;
+          overflow: hidden;
+          position: relative;
+          border: 1px solid $border-color;
+          transition: 0.3s ease;
+          border-radius: 20px;
+          &:before {
+            content: "";
+            display: block;
+            padding-top: 80%;
+          }
+          .img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+            transition: 0.3s ease;
+          }
+          &:hover {
+            box-shadow: 5px 5px 5px $border-color;
+            .img {
+              transform: scale(1.1);
+            }
+            .txtBox {
+              transform: translateY(0);
+            }
+          }
+          .txtBox {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 30px;
+            transform: translateY(25%);
+            transition: 0.3s ease;
+            background-color: #fff;
+            box-sizing: border-box;
+            h3 {
+              margin-bottom: 30px;
+              font-size: $h3;
+              @include multiEllipsis;
+            }
+            .date {
+              margin-bottom: 30px;
+            }
+            .text {
+              // white-space: nowrap;
+              // overflow: hidden;
+              // text-overflow: ellipsis;
+              @include ellipsis;
+            }
+          }
+        }
+      }
+      .btns {
+        margin-top: 80px;
+      }
+    }
+  }
+  // news end
+  #cs {
+    .contents {
+      width: 1440px;
+      margin: auto;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        li {
+          width: 49%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          overflow: hidden;
+          border-radius: 10px;
+          &:nth-child(1) {
+            background-image: url("../images/main/bg_contact.jpg");
+          }
+          &:nth-child(2) {
+            background-image: url("../images/main/bg_charge.jpg");
+          }
+          a {
+            height: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            .txtBox {
+              color: $white-color;
+              strong {
+                font-size: $large-size;
+                display: block;
+                margin-bottom: 10px;
+              }
+            }
+            .btn {
+              @include flexCenter();
+              background-color: $text-color;
+              color: $white-color;
+              padding: 10px 20 px;
+              border-radius: 100px;
+              font-size: $normal-size;
+              span {
+                display: block;
+                color: $main-color;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media all and (max-width: 1440px) {
+//   #main {
+//     #news {
+//       .contents {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  left: 50px;
+  top: 100px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  .contents {
+    padding: 50px;
+  }
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    button {
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(1, 101, 252);
+      border-radius: 5px;
+      color: #fff;
+    }
+  }
+}

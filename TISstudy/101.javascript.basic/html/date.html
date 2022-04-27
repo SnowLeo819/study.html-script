@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/date.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <h1>Clock</h1>
+      <div id="dateBox">
+        <div class="txt01">2021 /</div>
+        <div class="txt02">tue</div>
+      </div>
+      <div id="timeBox">AM 11 : 53 : 29</div>
+      <div id="analog">
+        <span class="hour"></span>
+        <span class="min"></span>
+        <span class="sec"></span>
+      </div>
+    </div>
+  </body>
+  <script>
+    // 이벤트를 걸어서 매 초마다 1회 실행하도록 하기
+
+    /* setInterval(실행함수,시간(ms기준))
+    let count = 0;
+    function 실행함수() {
+      count = count + 1;
+      console.log(count);
+    } // function declation
+
+    let count = 0;
+    const 실행함수02 = function () {
+      count = count + 1;
+      console.log(count);
+    }; // function expression
+
+    실행함수(count);
+    // setInterval(실행함수, 1000);*/
+
+    const months = [
+      "january",
+      "february",
+      "march",
+      "april",
+      "may",
+      "june",
+      "july",
+      "august",
+      "september",
+      "october",
+      "november",
+      "december",
+    ];
+    const engDays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+    const days = ["일", "월", "화", "수", "목", "금", "토"];
+
+    function addZero(num) {
+      let result;
+      if (num < 10) {
+        result = "0" + num;
+        // console.log("리턴 위의 로그, 정상적으로 출력됩니다.");
+        return result;
+        // console.log("리턴 아래의 로그, 리턴을 만나면 값을 보내고 종료되어 출력되지 않습니다.");
+      }
+      result = num;
+      return result;
+    }
+
+    const txt01 = document.querySelector("#dateBox .txt01");
+    const txt02 = document.querySelector("#dateBox .txt02");
+    const timeBox = document.querySelector("#timeBox");
+    const itemHour = document.querySelector("#analog .hour");
+    const itemMin = document.querySelector("#analog .min");
+    const itemSec = document.querySelector("#analog .sec");
+
+    function showTime() {
+      const now = new Date(); // 실행되는 시점의 시간
+      const year = now.getFullYear(); //4자리 년도
+      const month = now.getMonth(); // 월 0~11
+      const date = now.getDate(); // 일
+      const day = now.getDay(); // 요일
+      let hour = now.getHours(); // 24시간
+      const min = now.getMinutes(); // 0~59 분
+      const sec = now.getSeconds(); // 0~59 초
+      let apm;
+      if (hour >= 12) {
+        apm = "PM";
+        hour = hour - 12;
+      } else if (hour < 12) {
+        apm = "AM";
+      }
+
+      txt01.textContent = `${year} / ${months[month]} / ${date}`;
+      txt02.textContent = `${engDays[day].toUpperCase()} (${days[day]})`;
+
+      timeBox.textContent = `${apm} ${addZero(hour)}:${addZero(min)}:${addZero(
+        sec
+      )}`;
+
+      itemSec.style.transform = `rotate(${sec * 6}deg)`;
+      itemMin.style.transform = `rotate(${min * 6 + min * 0.1}deg)`;
+      itemHour.style.transform = `rotate(${hour * 30 + min * 0.5}deg)`;
+
+      // console.log(now);
+      // console.log(year, month, date, day, hour, min, sec);
+      // console.log(
+      //   `${year}년, ${month + 1}월, ${date}일, ${
+      //     days[day]
+      //   }요일, ${hour}:${min}:${sec}`
+      // );
+    }
+    showTime();
+    setInterval(showTime, 1000);
+  </script>
+</html>

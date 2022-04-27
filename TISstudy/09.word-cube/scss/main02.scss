@@ -1,0 +1,77 @@
+@import "vars";
+@import "mixins";
+
+#main {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  .scene {
+    width: 1200px;
+    height: 550px;
+    perspective: 1000px;
+    .carousel {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      // transform: translateZ(-1000px);
+      // transform: rotateX(45deg) rotateY(45deg);
+      .face {
+        opacity: 0.5;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: #111;
+        font-size: 36px;
+        font-weight: 700;
+        &:nth-child(10n+1) {background-color: rgb(136, 255, 0);}
+        &:nth-child(10n+2) {background-color: rgb(0, 119, 255)}
+        &:nth-child(10n+3) {background-color: rgb(255, 0, 191)}
+        &:nth-child(10n+4) {background-color: rgb(0, 255, 221)}
+        &:nth-child(10n+5) {background-color: rgb(94, 255, 0)}
+        &:nth-child(10n+6) {background-color: rgb(0, 255, 64)}
+        &:nth-child(10n+7) {background-color: rgb(133, 82, 15)}
+        &:nth-child(10n+8) {background-color: rgb(4, 11, 73)}
+        &:nth-child(10n+9) {background-color: rgb(66, 65, 11)}
+        &:nth-child(10n+10) {background-color: rgb(255, 136, 136)}
+      }
+    }
+  }
+}
+#bgParticle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 1px,
+      0,
+      transparent 5%
+    )
+    #333;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button{
+    cursor: pointer;
+  }
+  .material-icons{
+    color: #fff;
+    font-size: 48px;
+  }
+}

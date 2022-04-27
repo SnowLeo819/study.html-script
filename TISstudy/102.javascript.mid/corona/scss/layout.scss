@@ -1,0 +1,140 @@
+@import "vars";
+@import "mixins";
+
+body {
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 1px,
+      0,
+      transparent 50px
+    )
+    #333;
+}
+.wrap {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin: 50px 0 150px;
+    font-size: 48px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .dataBox {
+    display: flex;
+    margin-top: 100px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      li {
+        display: flex;
+        margin: 5px;
+        padding: 20px;
+        flex-basis: 100px;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        .incDec {
+          margin-top: 20px;
+          font-size: 48px;
+          font-weight: 100;
+          @include longShadow(#999, right, 70);
+        }
+      }
+    }
+  }
+}
+
+.calendar {
+  position: absolute;
+  right: 40px;
+  top: 100px;
+  width: 300px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  .header {
+    display: flex;
+    justify-content: center;
+    button {
+      background: none;
+      outline: none;
+      border: none;
+    }
+    .monthBox {
+      font-weight: 700;
+    }
+  }
+  .days {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .days,
+  .dates {
+    ul {
+      display: flex;
+      // justify-content: space-between;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% / 7 - 4px);
+        margin: 2px;
+        position: relative;
+        cursor: pointer;
+        &.on {
+          span {
+            border: 2px solid #111;
+          }
+        }
+        &.sun {
+          span {
+            background-color: rgb(236, 17, 17);
+          }
+        }
+        &.today {
+          span {
+            overflow: hidden;
+            background-color: rgb(17, 148, 236);
+            font-weight: 700;
+            @include longShadow(darken(rgb(17, 148, 236), 10), right, 30);
+          }
+        }
+        &::before {
+          content: "";
+          display: block;
+          padding-top: 100%;
+        }
+        &.blank {
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #666;
+          color: #fff;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          transition: 0.3s ease;
+        }
+      }
+    }
+  }
+}

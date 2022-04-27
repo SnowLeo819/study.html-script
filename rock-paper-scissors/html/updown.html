@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>updown</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div><input type="text" placeholder="1~100 까지 숫자를 입력하세요." id="num" /></div>
+      <div><button id="btnConfirm">확인</button></div>
+    </div>
+  </body>
+  <script>
+    // 숫자입력 하고 확인누르면
+    // alert 으로 up / down 알려주기
+    // 정답이면 alert 으로 알려주기 & 몇번만에 찾았는지 횟수 알려주기
+    const random = Math.ceil(Math.random() * 100);
+    console.log(random);
+    const num = document.querySelector("#num");
+    const btnConfirm = document.querySelector("#btnConfirm");
+    let count = 0;
+    function nope(msg, dom) {
+      alert(msg);
+      dom.value = "";
+      dom.focus();
+      count++;
+    }
+    function check() {
+      const setNum = Number(num.value);
+      if (setNum >= 101 || setNum <= 0) {
+        nope("1~100까지의 숫자를 입력해주세요", num);
+        return;
+      }
+      if (setNum < random) {
+        // alert("UP!");
+        nope("UP!", num);
+        return;
+      }
+      if (setNum > random) {
+        // alert("Down!");
+        nope("DOWN!", num);
+        return;
+      } else {
+        count++;
+        alert(`정답! ${count}회만에 맞추셨어요!`);
+      }
+    }
+    num.addEventListener("keyup", function (e) {
+      // console.log("enterd");
+      // console.log(e.key);
+      const selectKeyBoard = e.key;
+      if (selectKeyBoard === "Enter") {
+        check();
+      }
+    });
+    btnConfirm.addEventListener("click", () => {
+      check();
+    });
+  </script>
+</html>

@@ -1,0 +1,11 @@
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; max-width: 480px; margin: auto; font-family: "Lexend", "Noto Sans KR"; height: 100vh; background-color: #00adcc; overflow: hidden; color: #fff; text-align: center; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, 0, transparent 20px) #00adcc; }
+
+.wrap h1 { font-size: 48px; font-weight: 500; margin-top: 50px; margin-bottom: 150px; text-transform: uppercase; font-weight: 700; text-shadow: 1px 1px 0px #008299,2px 2px 0px #008299,3px 3px 0px #008299,4px 4px 0px #008299,5px 5px 0px #008299,6px 6px 0px #008299,7px 7px 0px #008299,8px 8px 0px #008299,9px 9px 0px #008299,10px 10px 0px #008299,11px 11px 0px #008299,12px 12px 0px #008299,13px 13px 0px #008299,14px 14px 0px #008299,15px 15px 0px #008299,16px 16px 0px #008299,17px 17px 0px #008299,18px 18px 0px #008299,19px 19px 0px #008299,20px 20px 0px #008299;; }
+
+.wrap h1 strong { font-weight: 500; }
+
+.wrap #suggestWord { margin-bottom: 50px; font-size: 18px; font-weight: 700; }
+
+.wrap #inputBox input { border: none; outline: none; width: 200px; line-height: 1.5; font-size: 18px; border-radius: 20px; padding: 0 10px; }

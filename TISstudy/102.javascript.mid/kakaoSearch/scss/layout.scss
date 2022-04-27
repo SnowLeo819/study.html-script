@@ -1,0 +1,81 @@
+@import "vars";
+@import "mixins";
+
+body {
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 50px) #333;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  h1 {
+    font-size: 32px;
+    margin: 50px 0 150px;
+    text-align: center;
+    color: #fff;
+  }
+  #writtenWord {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      li {
+        margin: 5px;
+        background-color: rgb(230, 113, 3);
+        color: #fff;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        padding: 10px 20px;
+        overflow: hidden;
+        @include longShadow(darken(rgb(230, 113, 3), 10), right, 30);
+        margin-bottom: 15px;
+        font-size: $medium-size;
+      }
+    }
+  }
+  #thumbnailList {
+    margin-top: 50px;
+    ul {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      li {
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+  .inputBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #word {
+    top: 140px;
+    transform: translateX(-50%);
+    position: absolute;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    padding: 10px 50px;
+    font-size: 20px;
+    width: 400px;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  #test {
+    margin-top: 20px;
+    color: rgb(230, 113, 3);
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    font-size: $medium-size;
+  }
+}

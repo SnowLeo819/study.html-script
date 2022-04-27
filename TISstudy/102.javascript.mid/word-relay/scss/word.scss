@@ -1,0 +1,70 @@
+@import "vars";
+@import "mixins";
+
+img {
+  vertical-align: top;
+}
+body {
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 1px,
+      0,
+      transparent 50px
+    )
+    #333;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 32px;
+    margin: 100px 0;
+    text-align: center;
+    color: #fff;
+  }
+  #writtenWord {
+    ul {
+      display: flex;
+      li {
+        margin: 5px;
+        background-color: rgb(230, 113, 3);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        padding: 10px 20px;
+        overflow: hidden;
+        @include longShadow(darken(rgb(230, 113, 3), 10), right, 30);
+        margin-bottom: 50px;
+        font-size: $medium-size;
+      }
+    }
+  }
+  .inputBox {
+    position: fixed;
+    width: 100%;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  #word {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    padding: 20px 50px;
+    font-size: 20px;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  #test {
+    margin-top: 20px;
+    color: rgb(230, 113, 3);
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    font-size: $medium-size;
+  }
+}

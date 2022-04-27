@@ -1,0 +1,103 @@
+@import "vars";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  max-width: 480px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "lexend", "Noto Sans KR";
+  h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .btns {
+    display: flex;
+    margin-top: 50px;
+    label {
+      margin: 0 10px;
+      input {
+        display: none;
+      }
+      input:checked ~ span:after {
+        background-color: $main-color;
+        border: none;
+        content: "\2713";
+        color: #fff;
+        @include longShadow(darken($main-color, 20), right, 10);
+      }
+      span {
+        display: flex;
+        align-items: center;
+        user-select: none;
+        &:after {
+          content: "";
+          @include flexCenter();
+          overflow: hidden;
+          width: 24px;
+          height: 24px;
+          border: 2px solid $gray-color;
+          border-radius: 3px;
+          margin-left: 6px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+#lottoPaper {
+  height: 400px;
+  padding: 30px;
+  display: flex;
+  margin: 100px auto;
+  border: 10px solid #d9d9d9;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ul {
+    display: flex;
+    margin: 5px 0;
+    li {
+      font-size: 18px;
+      overflow: hidden;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: #000;
+      border-radius: 100px;
+      margin: 0 5px;
+      &.yellow {
+        background-color: rgb(184, 216, 0);
+        @include longShadow(darken(rgb(184, 216, 0), 10), right, 30);
+      }
+      &.blue {
+        background-color: rgb(0, 68, 255);
+        @include longShadow(darken(rgb(0, 68, 255), 10), right, 30);
+      }
+      &.red {
+        background-color: red;
+        @include longShadow(darken(red, 10), right, 30);
+      }
+      &.black {
+        background-color: #333;
+        @include longShadow(darken(#333, 10), right, 30);
+      }
+      &.green {
+        background-color: rgb(2, 206, 87);
+        @include longShadow(darken(rgb(2, 206, 87), 10), right, 30);
+      }
+      //노 파 빨 검 초
+    }
+  }
+}

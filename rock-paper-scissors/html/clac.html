@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calc</title>
+  </head>
+  <body>
+    <input type="text" name="" id="input01" /><span>+</span>
+    <input type="text" name="" id="input02" />
+    <button id="plusBtn">=</button>
+    <input type="text" name="" id="resultTxt" />
+  </body>
+  <script>
+    // const result = num01 + num02;
+    // 객체 : 메서드와 속성을 정의해놓은 설명서
+    // 메서드 : 특정 객체 안에 만들어진 함수
+    // 속성 : 특정 객체가 가지는 변수
+    // console.log(document.querySelector("#input01").value);
+
+    const input01 = document.querySelector("#input01");
+    const input02 = document.querySelector("#input02");
+    const plusBtn = document.querySelector("#plusBtn");
+    const resultTxt = document.querySelector("#resultTxt");
+
+    function add(num01 = 0, num02 = 0) {
+      return num01 + num02;
+    }
+
+    plusBtn.addEventListener("click", () => {
+      const num01 = parseInt(input01.value, 10);
+      const num02 = parseInt(input02.value, 10);
+      resultTxt.value = add(num01, num02);
+    });
+  </script>
+</html>

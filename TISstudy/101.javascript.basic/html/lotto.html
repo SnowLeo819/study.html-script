@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <title>LOTTO</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/lotto.css" />
+    <script src="../js/gsap/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>How Many Times?</h1>
+      <div class="btns">
+        <label>
+          <input type="radio" name="times" id="" value="1" />
+          <span>1</span>
+        </label>
+        <label>
+          <input type="radio" name="times" id="" value="2" />
+          <span>2</span>
+        </label>
+        <label>
+          <input type="radio" name="times" id="" value="3" />
+          <span>3</span>
+        </label>
+        <label>
+          <input type="radio" name="times" id="" value="4" />
+          <span>4</span>
+        </label>
+        <label>
+          <input type="radio" name="times" id="" value="5" />
+          <span>5</span>
+        </label>
+      </div>
+      <div id="lottoPaper">
+        <!-- <ul>
+          <li>3</li>
+          <li>5</li>
+          <li>12</li>
+          <li>30</li>
+          <li>27</li>
+          <li>22</li>
+        </ul> -->
+      </div>
+    </div>
+  </body>
+  <script>
+    const lottoPaper = document.querySelector("#lottoPaper");
+
+    const makeLotto = () => {
+      const lotto = []; // 1~45 들어갈 배열
+      const myLotto = []; // lotto 에서 뽑아낸 6개의 숫자 배열
+      // 1~45 숫자를 lotto에 넣는 수식
+      for (let i = 1; i < 46; i++) {
+        lotto.push(i);
+      }
+
+      // lotto 에서 값을 추출해서 myLotto 에 넣는 수식
+      for (let j = 0; j < 6; j++) {
+        const random = Math.floor(Math.random() * lotto.length);
+        const selected = lotto.splice(random, 1)[0];
+        myLotto.push(selected);
+      }
+
+      // 추출된 숫자들을 정렬하는 수식(오름차순)
+      myLotto.sort(function (a, b) {
+        return a - b;
+      });
+
+      // ul 을 만드는 수식
+      const ul = document.createElement("ul");
+
+      // #lottoPaper 에 내용을 입력하는 수식
+      lottoPaper.appendChild(ul);
+      for (let k = 0; k < 6; k++) {
+        const selcted = myLotto[k];
+        let color;
+        if (selcted <= 10) {
+          color = "yellow";
+        } else if (selcted <= 20) {
+          color = "blue";
+        } else if (selcted <= 30) {
+          color = "red";
+        } else if (selcted <= 40) {
+          color = "black";
+        } else {
+          color = "green";
+        }
+        ul.innerHTML += `<li class="${color}">${myLotto[k]}</li>`;
+      }
+    };
+
+    // makeLotto();
+    const radios = document.querySelectorAll("input[type='radio'][name='times']");
+    // console.log(radios);
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function () {
+        lottoPaper.innerHTML = "";
+        for (let j = 0; j < this.value; j++) {
+          makeLotto();
+        }
+        gsap.from("#lottoPaper li", { scale: 0, ease: "elastic", duration: 1, stagger: 0.05 });
+      });
+    }
+
+    // console.log(myLotto);
+
+    // for (let k = 0; k < 6; k++) {
+    //   let color = "yellow";
+    //   if (myLotto[k] >= 11 && myLotto[k] < 21) {
+    //     color = "blue";
+    //   } else if (myLotto[k] >= 21 && myLotto[k] < 31) {
+    //     color = "red";
+    //   } else if (myLotto[k] >= 31 && myLotto[k] < 41) {
+    //     color = "black";
+    //   } else {
+    //     color = "green";
+    //   }
+    //   ul.innerHTML += `<li class="${color}">${myLotto[k]}</li>`;
+    // }
+    // gsap.from("#lottoPaper li", { scale: 0, ease: "elastic", duration: 1.5, stagger: 0.1 });
+    // console.log(myLotto);
+  </script>
+</html>

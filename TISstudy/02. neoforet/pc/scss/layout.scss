@@ -1,0 +1,298 @@
+@import "vars";
+@import "mixins";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lexend", "Noto Sans KR", sans-serif;
+  font-size: 1.6rem;
+  color: $text-color;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 99;
+  color: #fff;
+  top: 0px;
+  &:scroll {
+    background-color: #fff;
+    color: #111;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+  }
+  &:hover {
+    // color: $text-color;
+    // background-color: $white-color;
+    #logo {
+      .color {
+        // display: block;
+      }
+      .white {
+        // display: none;
+      }
+    }
+  }
+  #logo {
+    position: absolute;
+    left: 50px;
+    a {
+      display: flex;
+      height: 100px;
+      align-items: center;
+      .color {
+        display: none;
+      }
+    }
+  }
+  #gnb {
+    margin: auto;
+    .list {
+      display: flex;
+      justify-content: center;
+      > li {
+        &:hover {
+          > a {
+            // color: $main-color;
+            background-color: $main-color;
+            color: #fff;
+            &::after {
+              transform: scale(1);
+            }
+          }
+          .depth02 {
+            // display: flex;
+          }
+        }
+        > a {
+          display: flex;
+          height: 100px;
+          position: relative;
+          padding: 0 60px;
+          font-size: $medium-size;
+          transition: 0.3s ease;
+          justify-content: center;
+          align-items: center;
+          font-weight: 500;
+          &:after {
+            height: 3px;
+            bottom: 0;
+            right: 20px;
+            left: 20px;
+            transform: scale(0);
+            transition: 0.3s ease;
+            background-color: #fff;
+            transform-origin: 0;
+            @include pseudo();
+          }
+        }
+        .depth02 {
+          background-color: $main-color;
+          left: 0;
+          display: none;
+          // width: 100%;
+          // position: absolute;
+          // justify-content: center;
+          border-radius: 0 0 10px 10px;
+          padding: 15px 10px;
+          color: #fff;
+          li {
+            &:hover {
+              a {
+                // color: $hover-color;
+                background-color: darken($main-color, 10);
+                border-radius: 5px;
+              }
+            }
+            a {
+              display: flex;
+              // height: 60px;
+              padding: 15px 0;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .etc {
+    display: flex;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    align-items: center;
+    .item:hover {
+      button {
+        color: $main-color;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+      }
+      ul {
+        display: block;
+        border: 1px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        li:hover {
+          color: $main-color;
+        }
+      }
+    }
+    button {
+      width: 80px;
+      height: 50px;
+      position: relative;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      // background-color: #f00;
+      border-bottom: none;
+      transition: 0.3s ease;
+      border-radius: 5px 5px 0 0;
+      cursor: pointer;
+      color: #fff;
+    }
+    ul {
+      display: none;
+      position: absolute;
+      padding: 20px;
+      transition: 0.3s ease;
+      // background-color: #f00;
+      border-radius: 0 0 5px 5px;
+      background-color: $white-color;
+      // border: 1px solid #d9d9d9;
+      &:before {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 5px;
+        background-color: $white-color;
+      }
+      li {
+        a {
+          display: block;
+        }
+      }
+    }
+    .language {
+      display: block;
+      ul {
+        padding: 20px 0;
+        li a {
+          padding: 10px 0 10px 30px;
+        }
+      }
+    }
+
+    .sns {
+      li {
+        &:hover {
+          &:nth-child(1) a::before {
+            background-position: 0 -50px;
+          }
+          &:nth-child(2) a::before {
+            background-position: -50px -50px;
+          }
+          &:nth-child(3) a::before {
+            background-position: -100px -50px;
+          }
+          &:nth-child(4) a::before {
+            background-position: -150px -50px;
+          }
+          &:nth-child(5) a::before {
+            background-position: -200px -50px;
+          }
+        }
+        a {
+          display: block;
+          position: relative;
+          padding: 10px 0 10px 30px;
+          font-size: 1.4rem;
+          &::before {
+            left: 0;
+            background-image: url(../images/common/utility.png);
+            @include pseudo();
+            @include box(32px, 18px);
+          }
+        }
+        &:nth-child(1) a::before {
+          background-position: 0 0;
+        }
+        &:nth-child(2) a::before {
+          background-position: -50px 0;
+        }
+        &:nth-child(3) a::before {
+          background-position: -100px 0;
+        }
+        &:nth-child(4) a::before {
+          background-position: -150px 0;
+        }
+        &:nth-child(5) a::before {
+          background-position: -200px 0;
+        }
+        // sns hover 하면 색 바꾸기
+      }
+    }
+  }
+}
+// header end
+#footer {
+  margin-top: 100px;
+  padding: 50px 0;
+  background-color: $gray-color;
+  .contents {
+    width: 1440px;
+    margin: 10px auto;
+    position: relative;
+    .addressBox {
+      color: #999;
+      .logo {
+        margin-bottom: 30px;
+      }
+      address {
+        .info * {
+          margin-right: 10px;
+        }
+        .copyright {
+          padding-top: 20px;
+        }
+      }
+    }
+    .link {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 100px;
+      padding: 10px 20px;
+      background-color: $text-color;
+      color: $white-color;
+    }
+  }
+}
+
+.btnTop {
+  background-color: $main-color;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+}

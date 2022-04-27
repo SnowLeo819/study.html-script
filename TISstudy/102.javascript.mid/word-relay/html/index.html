@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/word.css" />
+    <script src="../js/gsap/gsap.min.js"></script>
+    <script src="../js/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>
+        <span class="main">Word Relay</span>
+      </h1>
+      <!-- <div id="suggestWord"></div> -->
+      <div id="writtenWord">
+        <ul></ul>
+      </div>
+      <div id="inputBox">
+        <input type="text" id="word" />
+      </div>
+      <!-- <div>
+        <h3 id="scoreBox">score : 0</h3>
+      </div> -->
+    </div>
+  </body>
+  <script>
+    const suggestWord = document.querySelector("#suggestWord");
+    const word = document.querySelector("#word");
+    const written = document.querySelector("#writtenWord ul");
+    const writtenArray = [];
+    const firstWordArray = ["호랑이", "개구리", "떡볶이", "거문고", "오징어", "진돗개"];
+    writtenArray.push(firstWordArray[Math.floor(Math.random() * firstWordArray.length)]);
+    writtenArray.forEach(function (item, index) {
+      console.log(item);
+      written.innerHTML += `<li>${item}</li>`;
+      // written.innerHTML = written.innerHTML + `<li>${item}</li>`;
+    });
+    // suggestWord.textContent =firstWordArray[Math.floor(Math.random() * firstWordArray.length)];
+
+    // 1. 주어진 단어의 마지막 글자와 입력하는 첫글자 같으면
+    // 2. 입력내용으로 suggestWord 변경
+    // 3. word의 내용은 공백으로 변경 & focus
+    // 4. 기본 3글자씩 입력 (아니면 경고창)
+
+    console.log(suggestWord);
+
+    function wrong() {
+      word.value = "";
+      word.focus();
+      gsap.fromTo(word, { x: 50 }, { x: 0, ease: "elastic", duration: 0.8 });
+    }
+
+    word.addEventListener("keyup", function (e) {
+      if (e.keyCode === "13" || e.key === "Enter") {
+        if (word.value.length !== 3) {
+          // 동일한 내용 (word.value.length >= 4 || word.value.length <= 2)
+          alert("단어입력은 3글자만 가능합니다.");
+          wrong();
+          return;
+        } else {
+          const lastWord = writtenArray[writtenArray.length - 1];
+          const lastChar = lastWord.charAt(lastWord.length - 1);
+          const firstChar = word.value.charAt(0);
+          console.log(firstChar, "===", lastChar);
+          const url = `https://opendict.korean.go.kr/api/search?key=96835FD266BCE93AED1EAD85E742AFF6&q=${word.value}&req_type=json&advanced=y`;
+          axios.get(url).then(function (res) {
+            console.log(res.data.channel.total);
+            if (res.data.channel.total > 0) {
+              if (firstChar === lastChar) {
+                if (!writtenArray.includes(word.value)) {
+                  writtenArray.push(word.value);
+                  written.innerHTML = "";
+                  writtenArray.forEach(function (item, index) {
+                    written.innerHTML += `<li>${item}</li>`;
+                  });
+                  word.value = "";
+                  word.focus();
+                } else {
+                  alert("이미 사용된 단어입니다!");
+                  wrong();
+                }
+              }
+            } else {
+              alert("국어사전에 등재되어 있지 않은 단어입니다");
+              wrong();
+            }
+          });
+        }
+      }
+    });
+  </script>
+  <script>
+    axios.get("https://opendict.korean.go.kr/api/search?key=96835FD266BCE93AED1EAD85E742AFF6&q=호랑&req_type=json&advanced=y").then(function (res) {
+      console.log(res.data.channel.total);
+    });
+  </script>
+</html>

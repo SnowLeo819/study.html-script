@@ -1,0 +1,28 @@
+{
+  "patientList": [
+    {
+      "id": "1",
+      "name": "홍길동",
+      "birth": "1992.03.21",
+      "age": "30",
+      "symptom": "대상포진",
+      "allergy": "아스피린 부작용",
+      "taking": "우루사",
+      "emergency": "000-0000-0000",
+      "update": "2021-12-07, 12:30",
+      "etc": "other data"
+    },
+    {
+      "id": "2",
+      "name": "김환자",
+      "birth": "1992.03.21",
+      "age": "30",
+      "symptom": "독감",
+      "allergy": "계란",
+      "taking": "우루사",
+      "emergency": "000-0000-0000",
+      "update": "2021-12-15, 13:30",
+      "etc": "other data"
+    }
+  ]
+}

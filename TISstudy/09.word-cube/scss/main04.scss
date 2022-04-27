@@ -1,0 +1,127 @@
+@import "vars";
+@import "mixins";
+
+$cube-width: 80px;
+
+#main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  #cubeBox {
+    width: calc(81 * 20);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .scene {
+    width: $cube-width;
+    height: $cube-width;
+    margin: 0 2px 2px 0;
+    .cube {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transform: translateZ(-$cube-width/2);
+      // transform: rotateX(45deg) rotateY(45deg);
+      .face {
+        // opacity: 0.5;
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+        &.right {
+          transform: rotateY(90deg) translateZ($cube-width / 2);
+          background-color: rgb(187, 255, 0);
+          @include longShadow(darken(rgb(187, 255, 0), 10), right, 100);
+        }
+        &.left {
+          transform: rotateY(-90deg) translateZ($cube-width / 2);
+          background-color: #f00;
+          @include longShadow(darken(#f00, 10), right, 100);
+        }
+        &.top {
+          transform: rotateX(90deg) translateZ($cube-width / 2);
+          background-color: rgb(17, 0, 255);
+          @include longShadow(darken(rgb(17, 0, 255), 10), right, 100);
+        }
+        &.bottom {
+          transform: rotateX(-90deg) translateZ($cube-width / 2);
+          background-color: rgb(148, 3, 206);
+          @include longShadow(darken(rgb(148, 3, 206), 10), right, 100);
+        }
+        &.front {
+          transform: rotateY(0) translateZ($cube-width / 2);
+          background-color: rgb(44, 196, 183);
+          @include longShadow(darken(rgb(44, 196, 183), 10), right, 100);
+        }
+        &.back {
+          transform: rotateY(180deg) translateZ($cube-width / 2);
+          background-color: rgb(0, 2, 141);
+          @include longShadow(darken(rgb(0, 2, 141), 10), right, 100);
+        }
+      }
+    }
+  }
+}
+#bgParticle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 5%) #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  ul {
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease;
+    &.off {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+  // pause와 auto 토글
+  li,
+  button {
+    width: auto;
+    padding: 0 10px;
+    height: 30px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+    &.on {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  button {
+    &.pause {
+      display: none;
+    }
+  }
+}

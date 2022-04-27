@@ -1,0 +1,41 @@
+@import "vars";
+@import "mixins";
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  #analog {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #333;
+    border-radius: 100%;
+    span {
+      display: block;
+      position: absolute;
+      border-radius: 100px;
+      left: 50%;
+      bottom: 150px;
+      transform-origin: 50% 100%;
+    }
+    .hour {
+      width: 15px;
+      height: 100px;
+      background-color: rgb(223, 5, 5);
+      transform: translateX(-50%);
+    }
+    .min {
+      width: 10px;
+      height: 120px;
+      background-color: rgb(206, 117, 1);
+      transform: translateX(-50%);
+    }
+    .sec {
+      width: 5px;
+      height: 130px;
+      background-color: rgb(2, 84, 206);
+      transform: translateX(-50%);
+    }
+  }
+}

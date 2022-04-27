@@ -1,0 +1,47 @@
+{
+  "imageFolder": "../images/",
+  "itemList": [
+    {
+      "img": "what today.png",
+      "title": "What today?!",
+      "desc": "코시국 라이프의 지루함을 덜어주기 위한 테스트 사이트 오늘 뭐 하지?!",
+      "tag": "#미니 팀 프로젝트, #코로나, #방콕",
+      "link": "https://snowleo819.tistory.com/12"
+    },
+    {
+      "img": "musick.png",
+      "title": "Mu.sick",
+      "desc": "자신만의 소개 및 전시 페이지만들기, 결정한 페이지 주제는 평소에 조금 관심이 있던 비주류 악기 소개부분이나 가수 등",
+      "tag": "#습작, #음악, #인디",
+      "link": "https://snowleo819.github.io/9990.mu.sick/index.html"
+    },
+    {
+      "img": "11.jpg",
+      "title": "to the unknown man",
+      "desc": "The United States saw the most new coronavirus cases of the pandemic on Friday, with deaths and hospitalizations also rising. Underlying conditions largely determine who survives.",
+      "tag": "#더미, #추가하기",
+      "link": "link 주소"
+    },
+    {
+      "img": "04.jpg",
+      "title": "to the unknown man",
+      "desc": "The United States saw the most new coronavirus cases of the pandemic on Friday, with deaths and hospitalizations also rising. Underlying conditions largely determine who survives.",
+      "tag": "#더미, #추가하기",
+      "link": "link 주소"
+    },
+    {
+      "img": "01.jpg",
+      "title": "to the unknown man",
+      "desc": "The United States saw the most new coronavirus cases of the pandemic on Friday, with deaths and hospitalizations also rising. Underlying conditions largely determine who survives.",
+      "tag": "#더미, #추가하기",
+      "link": "link 주소"
+    },
+    {
+      "img": "06.jpg",
+      "title": "to the unknown man",
+      "desc": "The United States saw the most new coronavirus cases of the pandemic on Friday, with deaths and hospitalizations also rising. Underlying conditions largely determine who survives.",
+      "tag": "#더미, #추가하기",
+      "link": "link 주소"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+@import "vars";
+@import "mixins";
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: auto;
+  font-family: "Lexend", "Noto Sans KR";
+  height: 100vh;
+  background-color: rgb(0, 173, 204);
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      0,
+      transparent 20px
+    )
+    rgb(0, 173, 204);
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include longShadow(darken(rgb(0, 173, 204), 10), right, 20);
+    strong {
+      font-weight: 500;
+    }
+  }
+  #suggestWord {
+    margin-bottom: 50px;
+    font-size: $medium-size;
+    font-weight: 700;
+  }
+  #inputBox {
+    input {
+      border: none;
+      outline: none;
+      width: 200px;
+      line-height: 1.5;
+      font-size: $medium-size;
+      border-radius: 20px;
+      padding: 0 10px;
+    }
+  }
+}

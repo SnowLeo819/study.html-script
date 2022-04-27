@@ -1,0 +1,84 @@
+@import "vars";
+@import "mixins";
+
+#main {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100vw;
+  #marioList {
+    li {
+      position: relative;
+    }
+    .cards {
+      display: flex;
+      align-items: center;
+      border-radius: 50px;
+      width: 1000px;
+      height: 600px;
+      .img {
+        // transform: translate(-100px, 100px);
+        //right: -100px
+        margin: 0 10px -100px -100px;
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+      .info {
+        // width: 500px;
+        color: #fff;
+        .title {
+          font-size: 48px;
+          font-weight: 700;
+        }
+        .desc {
+          padding: 10px;
+          margin-top: 20px;
+          font-size: 24px;
+          line-height: 1.2;
+        }
+        .link {
+          color: #333;
+          overflow: hidden;
+          margin-top: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          width: 120px;
+          padding: 15px;
+          background-color: #fff;
+          font-weight: 700;
+          @include longShadow(darken(#fff, 15), right, 50);
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    opacity: 1;
+    background-color: transparent;
+    transition: 0.3s ease;
+    &-active {
+      background-color: #fff;
+    }
+  }
+}
+
+#loop {
+  position: fixed;
+  left: 300px;
+  top: 300px;
+  z-index: 99 img {
+    width: 150px;
+  }
+}

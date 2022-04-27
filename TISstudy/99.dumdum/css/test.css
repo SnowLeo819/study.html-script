@@ -1,0 +1,9 @@
+dl { border: 1px solid red; }
+
+dl dt:hover ~ dd { display: block; }
+
+dl dd { display: none; }
+
+#image { overflow: hidden; }
+
+#image:hover { -webkit-transform: scale(1.3); transform: scale(1.3); }

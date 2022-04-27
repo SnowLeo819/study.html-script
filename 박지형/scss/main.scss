@@ -1,0 +1,224 @@
+@import "vars";
+@import "mixins";
+
+.title {
+  font-size: $x-large-size;
+  margin-bottom: 30px;
+}
+
+#main {
+  #mainVisual {
+    position: relative;
+    overflow: hidden;
+    .video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .copy {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $white-color;
+      .main {
+        left: 50px;
+        top: 50px;
+        font-size: $xx-large-size;
+        margin-bottom: 30px;
+        line-height: 1.2;
+      }
+      .sub {
+        font-size: $medium-size;
+        line-height: 2;
+      }
+    }
+  }
+
+  #news {
+    padding: 50px;
+    .newsList {
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: 32%;
+        border: 1px solid $border-color;
+        border-radius: 20px;
+        overflow: hidden;
+        .imgBox {
+          overflow: hidden;
+          img {
+            width: 100%;
+            transition: 0.3s ease;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .txtBox {
+          box-sizing: border-box;
+          padding: 20px;
+          .date {
+            color: $hover-color;
+            margin-bottom: 10px;
+          }
+          .newsTitle {
+            font-size: $large-size;
+            margin-bottom: 20px;
+          }
+          .detail {
+            font-size: $normal-size;
+          }
+        }
+      }
+    }
+  }
+
+  #product {
+    height: 860px;
+    padding: 50px 0;
+    .proVisual {
+      .proList {
+        background-color: #333;
+        color: $white-color;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+          padding: 0 20px;
+          a {
+            font-size: 3.2rem;
+            line-height: 2;
+          }
+        }
+      }
+      .imgList {
+        width: 100%;
+        position: relative;
+        li {
+          width: 100%;
+          height: 800px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          opacity: 0;
+          transition: 0.3s ease;
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+          &.view {
+            opacity: 1;
+            z-index: 5;
+          }
+          .copy {
+            position: absolute;
+            left: 20%;
+            top: 40%;
+            color: $white-color;
+            text-shadow: 5px 5px 3px $gray-color;
+            .main {
+              font-size: $x-large-size;
+              margin-bottom: 15px;
+            }
+            .sub {
+              font-size: $medium-size;
+            }
+          }
+          &:nth-child(1) {
+            background-image: url(../images/slider/slider_kena.jpg);
+            opacity: 1;
+          }
+          &:nth-child(2) {
+            background-image: url(../images/slider/slider_first.jpg);
+          }
+          &:nth-child(3) {
+            background-image: url(../images/slider/slider_inscription.jpg);
+          }
+          &:nth-child(4) {
+            background-image: url(../images/slider/slider_luntera.jpg);
+          }
+          &:nth-child(5) {
+            background-image: url(../images/slider/slider_bg.jpg);
+          }
+        }
+      }
+    }
+  }
+
+  #media {
+    padding: 40px 0;
+    h3 {
+      font-size: $large-size;
+    }
+    .mediaSlides {
+      li {
+        width: 100vw;
+        height: 800px;
+        &.slide01 {
+          background-image: url(../images/slider/slider_in_to_the_eco.jpg);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+        &.slide02 {
+          background-image: url(../images/slider/pierre-raveneau-ack-valka-4.jpg);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+        &.slide03 {
+          background-image: url(../images/slider/slider_cave.jpg);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+        &.slide04 {
+          background-image: url(../images/slider/slider_kena.jpg);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+        &.slide05 {
+          background-image: url(../images/slider/slider_luntera.jpg);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+      }
+    }
+    .swipeTool {
+      margin-top: 15px;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      padding: 0 30px;
+      box-sizing: border-box;
+      .pagination {
+        margin: 0 20px;
+        width: 88%;
+        height: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        top: calc(50% - 5px);
+      }
+      .swipe {
+        margin: 15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $border-color;
+        position: relative;
+        img {
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

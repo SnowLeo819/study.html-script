@@ -1,0 +1,7 @@
+@media all and (max-width: 980px) { #intro .video video { width: 100%; }
+  #intro .typing { font-size: 32px; }
+  .contentsWrap { padding: 50px; }
+  .contentsWrap .section h2 { font-size: 64px; }
+  .contentsWrap #profile ul li dl { font-size: 24px; } }
+
+@media all and (max-width: 640px) { #intro .typing { font-size: 24px; } }

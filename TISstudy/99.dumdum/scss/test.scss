@@ -1,0 +1,20 @@
+@import "vars";
+@import "mixins";
+
+dl {
+  border: 1px solid red;
+  dt {
+    &:hover ~ dd {
+      display: block;
+    }
+  }
+  dd {
+    display: none;
+  }
+}
+#image {
+  overflow: hidden;
+  &:hover {
+    transform: scale(1.3);
+  }
+}

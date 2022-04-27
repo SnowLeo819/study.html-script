@@ -1,0 +1,51 @@
+@mixin multiEllipsis($line-height: 1.5, $line: 2) {
+  line-height: $line-height;
+  height: $line-height * $line * 1em; // 높이를 몇으로 지정할건지
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line; // 몇줄 들어갈 것인지
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// f(x,y)
+
+@mixin pseudo($display: block, $position: absolute) {
+  content: "";
+  display: block;
+  position: $position;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin longShadow($bg-color: #000, $direction: right, $num: 100) {
+  $shadow: "";
+  @if ($direction == right) {
+    @for $i from 1 to $num {
+      $shadow: $shadow + $i + "px " + $i + "px 0px " + $bg-color + ",";
+    }
+    $shadow: $shadow + $num + "px " + $num + "px 0px " + $bg-color + ";";
+  } @else {
+    @for $i from 1 to $num {
+      $shadow: $shadow + $i * -1 + "px " + $i + "px 0px " + $bg-color + ",";
+    }
+    $shadow: $shadow + $num * -1 + "px " + $num + "px 0px " + $bg-color + ";";
+  }
+  $shadow: unquote($shadow);
+  text-shadow: $shadow;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

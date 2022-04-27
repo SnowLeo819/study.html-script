@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비만계산기</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/biman.css" />
+  </head>
+  <body>
+    <div class="biman">
+      <h1>비만도 계산기</h1>
+      <div class="inputBox">
+        <label
+          ><span>몸무게</span><input type="text" id="weight" placeholder="kg"
+        /></label>
+      </div>
+      <div class="inputBox">
+        <label
+          ><span>키</span><input type="text" id="height" placeholder="cm"
+        /></label>
+      </div>
+      <button id="btnResult">결과보기</button>
+      <button id="btnReset">처음으로</button>
+      <div id="result"></div>
+    </div>
+  </body>
+  <script>
+    const weight = document.querySelector("#weight");
+    const height = document.querySelector("#height");
+    const btnResult = document.querySelector("#btnResult");
+    const btnReset = document.querySelector("#btnReset");
+    const result = document.querySelector("#result");
+    //btn을 누르면 weight에 담겨진 값을 받아다가 myWeight에 넣겠다.
+    btnReset.addEventListener("click", function () {
+      weight.value = "";
+      height.value = "";
+      result.textContent = "";
+    });
+    btnResult.addEventListener("click", function () {
+      console.log(weight.value);
+      const myWeight = weight.value;
+      const myHeight = height.value;
+      const meterHeight = myHeight / 100;
+      const biman = myWeight / (meterHeight * meterHeight);
+      if (biman <= 18.5) {
+        result.innerHTML = "당신은 <strong>저체중</strong>입니다.";
+      } else if (biman > 18.5 && biman < 23) {
+        result.innerHTML = "당신은 <strong>정상</strong>입니다.";
+      } else if (biman >= 23 && biman < 25) {
+        result.innerHTML = "당신은 <strong>과체중</strong>입니다.";
+      } else if (biman >= 25 && biman < 30) {
+        result.innerHTML = "당신은 <strong>비만</strong>입니다.";
+      } else {
+        result.innerHTML = "당신은 <strong>고도비만</strong>입니다.";
+      }
+    });
+
+    // var : 변수 지정(자주쓰지 않음)
+    // let : 변수 지정
+    // const : 상수 지정(변동 x)
+  </script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>워드게임</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/word03.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>
+        <span class="main">Lyrics Game </span>
+      </h1>
+      <div id="suggestWord"></div>
+      <div id="inputBox">
+        <input type="text" id="typing" />
+      </div>
+      <div>
+        <h3 id="scoreBox">score : 0</h3>
+      </div>
+      <div id="btns">
+        <h3 class="lyrics">곡 선택</h3>
+        <button class="song01">1번 곡</button>
+        <button class="song02">2번 곡</button>
+        <button class="song03">3번 곡</button>
+        <button class="song04">4번 곡</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let words;
+    let wordList;
+    let title;
+    let score = 0;
+    const targetTxt = document.querySelector("#suggestWord");
+    const tryTxt = document.querySelector("#typing");
+    const scoreBox = document.querySelector("#scoreBox");
+    const song01 = document.querySelector("#btns .song01");
+    const song02 = document.querySelector("#btns .song02");
+    const song03 = document.querySelector("#btns .song03");
+    const song04 = document.querySelector("#btns .song04");
+
+    function lyricsSet() {
+      wordList = words.split(". ");
+      console.log(wordList);
+      let showTarget = wordList[Math.floor(Math.random() * wordList.length)];
+      targetTxt.textContent = showTarget;
+    }
+
+    words = `버튼을 눌러 곡을 선택해주세요`;
+    lyricsSet();
+
+    song01.addEventListener("click", function () {
+      console.log("밤의 정원");
+      title = "밤의 정원";
+      words = `밤의 정원. 한밤중에 악몽의 틈에서. 그대를 데려와서. 고요하고 너르른 풀밭에. 눕히고 재우리라. 풀벌레 소리. 시냇물이 흐르는 곳에. 내일은 아직. 오지 못하리. 그대가 잠들기 전엔. 연거푸. 짚고 일어서려는 손. 긁히며 달려. 멍들고 지친 발. 여기 넘어진 채로. 우리 함께. 엉겨 쉬면 어떠리. 깊은 밤. 깊은 잠. 깊은 밤. 젖은 이끼에. 벌거벗은 등을. 뉘여 보면 어떠리. 숨 쉰다. 마신다. 뱉는다. 부드러운 파도를. 그대의 턱 끝까지 덮어주고. 창밖에는 눈꽃과 안개가. 밤새 춤추게 하리라. 어린 날의 결핍. 무엇으로 채우리야. 어제는 다신 오지 못하리. 그대 이제 안심하오. 연거푸. 흘러내리는 붉은 땀. 흉진 곳에서. 새 잎이 돋는다. 여기 넘어진 채로. 우리 함께. 엉겨 쉬면 어떠리. 깊은 밤. 깊은 잠. 깊은 밤. 그래 언제고. 일어서서 다시. 가야 할 때 오겠지. 하지만 지금은 아닐 뿐. 나를 잠들게 해줘. 눈꺼풀 위로. 깊은 잠이. 마치 범람하듯. 넘친다. 잊는다. 잊힌다. 잊는다. 잠든다. 꿈조차 없는 잠`;
+      lyricsSet();
+    });
+    song02.addEventListener("click", function () {
+      console.log("문어의 꿈");
+      title = "문어의 꿈";
+      words = `문어의 꿈. 나는 문어. 꿈을 꾸는 문어. 꿈속에서는. 무엇이든지 될 수 있어. 나는 문어. 잠을 자는 문어. 잠에 드는 순간. 여행이 시작되는 거야. 높은 산에 올라가면. 나는 초록색 문어. 장미꽃 밭 숨어들면. 나는 빨간색 문어. 횡단보도 건너가면. 나는 줄무늬 문어. 밤하늘을 날아가면. 나는 오색 찬란한. 문어가 되는 거야. 깊은 바닷속은. 너무 외로워. 춥고 어둡고 차갑고. 때로는 무섭기도해. 그래서 나는. 매일 꿈을 꿔. 이곳은 참 우울해. 단풍놀이 구경 가면. 나는 노란색 문어. 커피 한잔 마셔주면. 나는 진갈색 문어. 주근깨의 꼬마와 놀면. 나는 점박이 문어. 밤하늘을 날아가면. 나는 오색 찬란한. 문어가 되는 거야. 깊은 바닷속은. 너무 외로워. 춥고 어둡고 차갑고. 때로는 무섭기도해. 그래서 나는. 매일 꿈을 꿔. 이곳은 깊은 바닷속은. 너무 외로워. 춥고 어둡고 차갑고. 때로는 무섭기도해.  아아 그래서 나는. 매일 꿈을 꿔. 이곳은 참 우울해`;
+      lyricsSet();
+    });
+    song03.addEventListener("click", function () {
+      console.log("화성침공");
+      title = "화성침공";
+      words = `화성침공. 빠빠 빠빠 빠빠 빠빠. 아홉시에 뉴스를 보고야 알았어. 서울시 밤 하늘에 뜬. 우주 비행선. 현실일까. 삐삐삐. 무슨 소리 들린다. 빼빼빼. 딴사람은 안 들리나. 뿌뿌뿌. 하필 나에게 말을 거는데. 이제 어떡해. 서울 비상사태 십 분 전. 오늘 지구는 일촉즉발. 이런 막중한 임무가 하필 내게. 맡겨지게 된 건데. 길게 드리워진 그림자. 뭔지 알 수 없는 실루엣. 먼저 다가가기는 어렵겠어요. 다음에 와줄래요. 돌아가 줘요. 빠빠 빠빠 빠빠 빠빠. 현관문을 똑똑. 두드리는 낯선 자. 검은 양복. 까만 선글라스 이 인조. 저...밤인데요. 삐삐삐. 비밀 요원입니다. 빼빼빼. 같이 가주셔야겠습니다. 뿌뿌뿌. 세계는 당신이 필요합니다. 당황스럽게. 서울 비상사태 오 분 전. 오늘 지구는 일촉즉발. 이런 막중한 임무가. 하필 내게. 주어지게 된 건데. 길게 드리워진 그림자. 뭔지 알 수 없는 실루엣. 먼저 다가가기는 어렵겠어요. 다음에 와줄래요. 귓가에 맴맴 도는. 소리는 난수 방송이라는데. 이 서울 땅에는. 어쩐 일이십니까. 서울 비상사태 삼 분 전. 오늘 지구는 일촉즉발. 지금 세계의. 시선이 다 몰렸다. 난 몰라요 미안해요. 길게 드리워진 그림자. 뭔지 알 수 없는 실루엣. 먼저 다가가기는 어렵겠어요. 다음에 와줄래요. 나 죽고 없을 때. 빠빠 빠빠 빠빠 빠빠`;
+      lyricsSet();
+    });
+    song04.addEventListener("click", function () {
+      console.log("매구");
+      title = "매구";
+      words = `매구. 금빛의 보름달이 뜬 옥좌에. 아홉 개의 꼬리가 피어나네. 아아 나를 대신할. 다음 xxx의 왕은 누구인가. 행운과 불행. 부유와 가난. 성공과 실패는. 언제나 비례하니. 그대들이 가져야 할 좋음은. 누가 앗아갔나. 불행한가 고달픈가 원통한가. 간단한 방법을. 이미 알고 있지 않은가. 빼앗아라 짓밟아라 증오해라. 탐욕에 진에에 휩싸여라. 에헤이야 라히이야. 휩싸여라. 인내는 미련. 배려는 사치. 신뢰는 허황. 타인은 내가 아니니. 오롯이 믿어야 할 건. 자신의 욕망이지 않는가!. 불쾌한가 부러운가 억울한가. 간단한 방법을. 이미 알고 있지 않은가. 유린해라 헐뜯어라 멸시해라. 탐욕에 진에에 휩싸여라. 나를 나에게 나만을 위해. 타인이 되지 못한 수많은 나. 가장 쉽고도 잘 보이는 길. 파멸로 향하네. 혀 안에 숨겼던 비수로. 서로의 심장을 찌르고. 열등감에 얽힌 사슬로. 서로의 발목을 자르니. 그대들은 이미 나보다. 훌륭한 짐승이다. 그 자리는 내 거다. 모든 것을. 가져보니 어떠한가. 허무한가 불안한가 두려운가. 사실은 결말을. 이미 알고 있지 않은가. 절규하고 후회하고 슬퍼해도. 그대의 두 손은. 이미 죄에 물들었으니. 욕심내고 분노하고 어리석은. 덧없고 가여운 인간이여. 에헤이야 라히이야. 인간이여. 에헤이야 라히이야. 왕이시여. 핏빛의 초승달이 뜬 옥좌에. 욕망의 그림자가 드리우네. 아아 나를 대신할. 다음 번뇌의 왕은 누구인가`;
+      lyricsSet();
+    });
+
+    let showTarget = wordList[Math.floor(Math.random() * wordList.length)];
+    targetTxt.textContent = showTarget;
+    tryTxt.addEventListener("keyup", function (e) {
+      if (e.keyCode === "13" || e.key === "Enter") {
+        console.log(title, "===", tryTxt.value);
+        if (title == tryTxt.value) {
+          score += 1000;
+          console.log(score);
+          scoreBox.innerHTML = `score : ${score}`;
+        } else {
+          score -= 100;
+          console.log(score);
+          scoreBox.innerHTML = `score : ${score}`;
+          tryTxt.value = "";
+          tryTxt.fucus;
+        }
+      }
+    });
+  </script>
+</html>

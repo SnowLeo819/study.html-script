@@ -1,0 +1,296 @@
+/*다크모드 지정을 위한 색 변수 지정*/
+:root {
+    --color1: #FFEEE4; /*배경(뒤쪽배경)*/
+    --color2: #ffffff; /*흰색(메인박스 바탕, 질문지글상자)*/
+    --color3: #000000; /*검정(기본글, 좋아요, 공유하기, 다시하기)*/
+    --color4: #EDEDED; /*라이트그레이(질문지바탕)*/
+    --color5: #0080FF; /*파랑(시작버튼)*/
+    --color6: #0080FF; /*파랑(태그글)*/
+    --color7: #E0E3DA; /*라이트그레이 좀더진함(메인박스 테두리)*/
+    --color8: #7C7877; /*언더라인*/
+    --color9: #7C7877; /*aboutus만 팔로잉*/
+    --value1: invert(0%);
+}
+
+:root.dark {
+    --color1: #121212; /*배경(뒤쪽배경)*/
+    --color2: #3F4040; /*진회색(메인박스 바탕, 질문지글상자)*/
+    --color3: #FFFFFF; /*흰색(기본글, 좋아요, 공유하기, 다시하기)*/
+    --color4: #5E5E5F; /*그레이(메인박스 테두리,질문지바탕)*/
+    --color5: #45D9FD; /*파랑(시작버튼)*/
+    --color6: #45D9FD; /*파랑(태그글)*/
+    --color7: #5E5E5F; /*라이트그레이 좀더진함(메인박스 테두리)*/
+    --color8: #7C7877; /*aboutus만 언더라인*/
+    --color9: #ffffff; /*aboutus만 팔로잉*/
+    --value1: invert(100%);
+}
+/*======================================*/
+
+* {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: var(--color3);
+}
+
+body {
+    background-color: var(--color1);
+}
+
+.main_block {
+    position: relative;
+    width: 491px;
+    height: 872px;
+
+    background: var(--color2);
+    border: 1px solid var(--color7);
+    box-sizing: border-box;
+    margin: 30px auto 0 auto;
+}
+
+.profile {
+    position: absolute;
+    width: 47px;
+    height: 45px;
+    left: 15px;
+    top: 16px;
+    filter: var(--value1);
+}
+
+.username {
+    position: absolute;
+    width: 194px;
+    height: 41px;
+    left: 83px;
+    top: 18px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+}
+
+.follower {
+    position: absolute;
+    width: 194px;
+    height: 41px;
+    left: 83px;
+    top: 78px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.follwing {
+    position: absolute;
+    width: 194px;
+    height: 41px;
+    left: 320px;
+    top: 78px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    color: var(--color8);
+}
+
+.line {
+    margin-top: 120px;
+    color: var(--color8);
+}
+
+.line2 {
+    background-color: black;
+    width: 50%;
+    margin-left: 0;
+    margin-top: -20px;
+}
+
+.namecard1 {
+    position: absolute;
+    width: 489px;
+    height: 100px;
+}
+
+.profile1 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    background-color: lightslategray;
+    top: 19px;
+    left: 15px;
+}
+
+.name1 {
+    position: relative;
+    left: 100px;
+    bottom: 35px;
+    font-size: 17px;
+}
+
+.intro1 {
+    position: relative;
+    left: 100px;
+    bottom: 50px;
+    font-size: 15px;
+    color: var(--color9);
+}
+
+.namecard2 {
+    position: absolute;
+    width: 489px;
+    height: 100px;
+    margin-top: 120px;
+}
+
+.profile2 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    background-color: lightslategray;
+    top: 19px;
+    left: 15px;
+}
+
+.name2 {
+    position: relative;
+    left: 100px;
+    bottom: 45px;
+    font-size: 17px;
+}
+
+.intro2 {
+    position: relative;
+    left: 100px;
+    bottom: 60px;
+    font-size: 14px;
+    color: var(--color9);
+}
+
+.namecard3 {
+    position: absolute;
+    width: 489px;
+    height: 100px;
+    margin-top: 240px;
+}
+
+.profile3 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    border: 1px solid lightsteelblue;
+    top: 19px;
+    left: 15px;
+}
+
+.name3 {
+    position: relative;
+    left: 100px;
+    bottom: 41px;
+    font-size: 17px;
+}
+
+.intro3 {
+    position: relative;
+    left: 100px;
+    bottom: 55px;
+    font-size: 15px;
+    color: var(--color9);
+}
+
+.namecard4 {
+    position: absolute;
+    width: 489px;
+    height: 100px;
+    margin-top: 360px;
+}
+
+.profile4 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    top: 19px;
+    left: 15px;
+}
+
+.name4 {
+    position: relative;
+    left: 100px;
+    bottom: 35px;
+    font-size: 17px;
+}
+
+.intro4 {
+    position: relative;
+    left: 100px;
+    bottom: 50px;
+    font-size: 15px;
+    color: var(--color9);
+}
+
+.div2 {
+    position: relative;
+    width: 350px;
+    height: 70px;
+}
+
+.div3 {
+    position: relative;
+    width: 350px;
+    height: 70px;
+}
+
+.link1 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    left: 410px;
+    bottom: 105px;
+    line-height: 17px;
+    font-size: 15px;
+}
+
+.link2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    left: 410px;
+    bottom: 135px;
+    line-height: 17px;
+    font-size: 15px;
+}
+
+.link3 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    left: 410px;
+    bottom: 135px;
+    line-height: 17px;
+    font-size: 15px;
+
+}
+
+.link4 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    left: 410px;
+    bottom: 105px;
+    line-height: 17px;
+    font-size: 15px;
+}
+
+#toggleDark {
+    position: absolute;
+    width: 28px;
+    height: 18px;
+    left: 443px;
+    top: 27px;
+    visibility: hidden;
+}
+
+

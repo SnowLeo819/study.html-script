@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORONA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <script src="../js/gsap/gsap.min.js"></script>
+    <script src="../js/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>
+        <span class="main"><strong>corona</strong></span>
+      </h1>
+      <div class="calendar">
+        <div class="header">
+          <button class="prev">
+            <span class="material-icons"> chevron_left </span>
+          </button>
+          <div class="monthBox">
+            <span class="year">2021</span>
+            <span class="month">12</span>
+          </div>
+          <button class="next">
+            <span class="material-icons"> chevron_right </span>
+          </button>
+        </div>
+        <!-- header end -->
+        <div class="days">
+          <ul>
+            <li class="sun"><span>SUN</span></li>
+            <li><span>MON</span></li>
+            <li><span>TUE</span></li>
+            <li><span>WED</span></li>
+            <li><span>THU</span></li>
+            <li><span>FRI</span></li>
+            <li class="sat"><span>SAT</span></li>
+          </ul>
+        </div>
+        <!-- days end -->
+        <div class="dates">
+          <ul>
+            <!-- <li><span>01</span></li>
+            <li><span>02</span></li>
+            <li><span>03</span></li>
+            <li><span>04</span></li>
+            <li><span>05</span></li>
+            <li><span>06</span></li>
+            <li><span>07</span></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="dataBox"></div>
+    </div>
+  </body>
+
+  <script>
+    //http method creat(post) read(get) update(put) d(delete)
+    const dataBox = document.querySelector(".dataBox");
+    const ul = document.createElement("ul");
+    dataBox.appendChild(ul);
+
+    const dateUL = document.querySelector(".dates ul");
+
+    // function showCoronaData(selectDate) {
+    //   axios
+    //     .get(
+    //       `http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?ServiceKey=CZ0nZUHrTXCOY589SrfcnsGNia98r3AjjGCvrWElufJznTvGZN95SQ%2F6hVbbfA0Jbp9M0P6tcAp3o2J%2BHah%2BJg%3D%3D&startCreateDt=${selectDate}&endCreateDt=${selectDate}&_type=json`
+    //     )
+    //     .then(function (res) {
+    //       // console.log(res.data.response.body.items.item);
+    //       const itemList = res.data.response.body.items.item;
+    //       let output = "";
+    //       itemList.forEach(function (item, idx) {
+    //         // console.log(item.gubun, item.incDec);
+    //         output += `<li>
+    //                     <div>${item.gubun}</div>
+    //                     <div class="incDec">${item.incDec}</div>
+    //                   </li>`;
+    //       });
+    //       ul.innerHTML = output;
+    //     });
+    // }
+  </script>
+  <script>
+    const now = new Date(); // 오늘 날짜
+    let pickedNow = new Date(); // 선택 날짜(클릭하면 넘어감)
+    let firstDay = new Date(now.getFullYear(), now.getMonth(), 1); //현재 날짜의 월에서 1일 기준으로 새로운 date 생성
+    console.log(now.getDay(), "===", firstDay.getDay());
+
+    /**윤년공식
+     * 1.4로 나누어 떨어지면 윤년
+     * 2.1을 만족해도 100으로 떨어지면 윤년이 아님
+     * 3.2를 만족해도 400으로 떨어지면 윤년
+     */
+    const leapYear = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //윤년을 배열로 표현
+    const nonLeapYear = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let selectYear;
+
+    const btnNextMonth = document.querySelector(".calendar .header .next");
+    const btnPrevMonth = document.querySelector(".calendar .header .prev");
+    const txtYear = document.querySelector(".calendar .header .year");
+    const txtMonth = document.querySelector(".calendar .header .month");
+    const calendar = document.querySelector(".calendar");
+    const inputDate = document.querySelector(".inputDate");
+
+    makeCalendar(pickedNow.getFullYear(), pickedNow.getMonth());
+
+    function makeCalendar(pYear, pMonth) {
+      let output = "";
+      let count = 1;
+      firstDay = new Date(pYear, pMonth, 1);
+      if (firstDay.getFullYear() % 4 === 0) {
+        if (firstDay.getFullYear() % 100 === 0) {
+          selectYear = nonLeapYear;
+        } else {
+          selectYear = leapYear;
+        }
+      } else {
+        selectYear = nonLeapYear;
+      }
+      if (firstDay.getFullYear() % 400 === 0) {
+        // 위 if문 안에 넣어도 되지만 너무 길어져서 뒤로 뺌.
+        selectYear = leapYear;
+      }
+      // 달력에서 최대로 생길 수 있는 칸 수 = 42.. (공백칸 포함)
+      for (let i = 0; i < 42; i++) {
+        if (i < firstDay.getDate()) {
+          //비워두기
+          output += `<li class="blank"><span></span></li>`;
+        } else {
+          if (
+            now.getDay() === count &&
+            now.getFullYear() === firstDay.getFullYear &&
+            now.getMonth() === firstDay.getMonth()
+          ) {
+            output += `<li class="today" data-date="${count}" data-year="${firstDay.getFullYear()}"
+          data-month="${firstDay.getMonth() + 1}"><span>${count}</span></li>`;
+          } else {
+            output += `<li data-date="${count}" data-year="${firstDay.getFullYear()}"
+          data-month="${firstDay.getMonth() + 1}"><span>${count}</span></li>`;
+          }
+          count += 1;
+        }
+        if (count > selectYear[firstDay.getMonth()]) {
+          break; // 반복문이 break를 만나면 종료. 빠져나감
+        }
+      }
+      dateUL.innerHTML = output;
+      gsap.from(".calendar .dates li", {
+        scale: 0,
+        ease: "power3",
+        stagger: 0.02,
+      });
+
+      const dateLI = document.querySelectorAll(".calendar .dates li");
+      let selectedDate;
+      dateLI.forEach(function (item, idx) {
+        item.addEventListener("click", function () {
+          //console.log(item.dataset.date);
+          const selectDay = `${item.dataset.year}${addZero(
+            item.dataset.month
+          )}${addZero(parseInt(item.dataset.date))}`;
+          //console.log(selectDay);
+          if (selectedDate) {
+            selectedDate.classList.remove("on");
+          }
+          selectedDate = item;
+          selectedDate.classList.add("on");
+          showCoronaData(selectDay);
+          inputDate.value = `${item.dataset.year} / ${addZero(
+            item.dataset.month
+          )} / ${addZero(parseInt(item.dataset.date))}`;
+        });
+      });
+    }
+
+    // for (let j = 1; j < 100; j++) {
+    //   if (j % 3 === 0) {
+    //     // continue;  //  반복문을 유지하되 조건이 맞으면 건너뛰기
+    //     break; // 반복문이 break를 만나면 종료. 빠져나감
+    //   }
+    //   console.log(j);
+    // }
+
+    //  li 를 생성하고 붙여야 사용 가능
+
+    // 이벤트 위임. 개체를 붙이기 전에 그 부모개체에 이벤틀을 걸어서 자식개체를 조정
+    // delegate 라고도 함
+    // dateUL.addEventListener("click", function (e) {
+    //   console.log(e.target.nodeName === "LI");
+    //   if (e.target.nodeName === "LI") {
+    //     showCoronaData(
+    //       `${item.dataset.year}${addZero(
+    //         addZero(item.dataset.month() + 1)
+    //       )}${addZero(parseInt(item.dataset.date))}`
+    //     );
+    //   }
+    // });
+
+    function addZero(num) {
+      if (num < 10) {
+        return "0" + num;
+      } else {
+        return num;
+      }
+    }
+    //    showCoronaData(
+    //   `${now.getFullYear()}${addZero(now.getMonth() + 1)}${addZero(
+    //     now.getDate()
+    //   )}`
+    // );
+  </script>
+</html>
